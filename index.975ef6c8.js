@@ -535,7 +535,7 @@ const selectCountry = (countries)=>{
         countryListEl.innerHTML = "";
         return renderCountryInfo(countries);
     }
-    if (arrayLength <= 10 && arrLength > 1) {
+    if (arrayLength <= 10 && arrayLength > 1) {
         countryInfoEl.innerHTML = "";
         return renderCountriesAll(countries);
     }
@@ -554,10 +554,10 @@ const renderCountryInfo = (countries)=>{
 const renderCountriesAll = (countries)=>{
     const markup = countries.map((country)=>{
         return `<li class="country">
-      <img src="${country.flags.svg}" width="220" height="110" alt="flag of ${country.name.official}">
+      <img src="${country.flags.svg}" width="50" height="30" alt="flag of ${country.name.official}">
       <p>${country.name.official}</p></li>`;
     }).join("");
-    countryListElinnerHTML = markup;
+    countryListEl.innerHTML = markup;
 };
 inputEl.addEventListener("input", onInput);
 
@@ -1611,12 +1611,12 @@ parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "fetchCountries", ()=>fetchCountries);
 var _notiflix = require("notiflix");
 var _notiflixDefault = parcelHelpers.interopDefault(_notiflix);
-function fetchCountries(name) {
+const fetchCountries = (name)=>{
     return fetch(`https://restcountries.com/v3.1/name/${name}?fields=name,capital,population,flags,languages`).then((response)=>{
         if (!response.ok) throw new Error((0, _notiflixDefault.default).Notify.failure("Oops, there is no country with that name"));
         return response.json();
     });
-}
+};
 
 },{"notiflix":"5z0Oc","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {

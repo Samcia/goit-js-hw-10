@@ -42,4 +42,11 @@ body {
   font-weight: bold;
 }
 
+.country {
+  align-items: center;
+  gap: 10px;
+  margin: 10px;
+  display: flex;
+}
+
 /*# sourceMappingURL=index.77a9bc14.css.map */
